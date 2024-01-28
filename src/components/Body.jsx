@@ -3,13 +3,7 @@ import Steps from "./bodyLeft/Steps"
 import ProgressControl from "./bodyLeft/ProgressControl"
 import Cart from "./Cart"
 
-function BodyLeft ({children}) {
- return (
-  <div className="site-main">
-    {children}
-  </div>
- ) 
-}
+
 
 function Body () {
   return (
