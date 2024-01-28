@@ -5,7 +5,7 @@ function Footer() {
       <div className="footer-container">
         <section className="footer-section">
           <div className="footer-logo-container">
-            <img src="./public/icons/logo.svg" className="cursor-point" />
+            <img src="/icons/logo.svg" className="cursor-point" />
           </div>
         </section>
         <section className="footer-section">
@@ -59,15 +59,15 @@ function Footer() {
             <div className="tel-info">+886 02123-45678</div>
             <div className="social-icon-group">
               <object
-                data="./public/icons/facebook.svg"
+                data="/icons/facebook.svg"
                 className="social-icon cursor-point"
               ></object>
               <object
-                data="./public/icons/instagram.svg"
+                data="/icons/instagram.svg"
                 className="social-icon cursor-point"
               ></object>
               <object
-                data="./public/icons/whatsapp.svg"
+                data="/icons/whatsapp.svg"
                 className="social-icon cursor-point"
               ></object>
             </div>

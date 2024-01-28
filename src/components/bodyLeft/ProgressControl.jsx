@@ -6,7 +6,7 @@ function ProgressControl() {
       <button className="next">
         下一步
         <object
-          data="./public/icons/right-arrow.svg"
+          data="/icons/right-arrow.svg"
           className="cursor-point"
         ></object>
       </button>
@@ -14,7 +14,7 @@ function ProgressControl() {
     <section className="button-group col col-12" data-phase="shipping">
       <button className="prev">
         <object
-          data="./public/icons/left-arrow.svg"
+          data="/icons/left-arrow.svg"
           className="cursor-point"
         ></object>
         上一步
@@ -22,7 +22,7 @@ function ProgressControl() {
       <button className="next">
         下一步
         <object
-          data="./public/icons/right-arrow.svg"
+          data="/icons/right-arrow.svg"
           className="cursor-point"
         ></object>
       </button>
@@ -30,7 +30,7 @@ function ProgressControl() {
     <section className="button-group col col-12" data-phase="credit-card">
       <button className="prev">
         <object
-          data="./public/icons/left-arrow.svg"
+          data="/icons/left-arrow.svg"
           className="cursor-point"
         ></object>
         上一步

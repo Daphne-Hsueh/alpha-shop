@@ -53,7 +53,12 @@ function Address() {
               <div className="input-group input-w-lg-2 input-w-sm-s1">
                 <div className="input-label">稱謂</div>
                 <div className="select-container">
-                  <select></select>
+                  <select required>
+                     <option value="" >請選擇稱謂</option>
+                      <option value="mr" selected="">先生</option>
+                      <option value="ms">女士</option>
+                      <option value="mx">不明</option>                    
+                  </select>
                 </div>
               </div>
               <div className="input-group input-w-lg-4 input-w-sm-s2">

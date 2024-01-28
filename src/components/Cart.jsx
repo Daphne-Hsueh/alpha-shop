@@ -8,19 +8,19 @@ function Cart() {
           data-count={0}
           data-price={3999}
         >
-          <img className="img-container" src="./public/images/product-1.jpg" />
+          <img className="img-container" src="/images/product-1.jpg" />
           <div className="product-info">
             <div className="product-name">破壞補丁修身牛仔褲</div>
             <div className="product-control-container">
               <div className="product-control">
                 <object
                   className="product-action minus"
-                  data="./public/icons/minus.svg"
+                  data="/icons/minus.svg"
                 />
                 <span className="product-count">0</span>
                 <object
                   className="product-action minus"
-                  data="./public/icons/plus.svg"
+                  data="icons/plus.svg"
                 />
               </div>
             </div>
@@ -32,19 +32,19 @@ function Cart() {
           data-count={0}
           data-price={1299}
         >
-          <img className="img-container" src="./public/images/product-2.jpg" />
+          <img className="img-container" src="/images/product-2.jpg" />
           <div className="product-info">
             <div className="product-name">刷色直筒牛仔褲</div>
             <div className="product-control-container">
               <div className="product-control">
                 <object
                   className="product-action minus"
-                  data="./public/icons/minus.svg"
+                  data="/icons/minus.svg"
                 />
                 <span className="product-count">0</span>
                 <object
                   className="product-action minus"
-                  data="./public/icons/plus.svg"
+                  data="/icons/plus.svg"
                 />
               </div>
             </div>

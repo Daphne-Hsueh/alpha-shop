@@ -8,7 +8,7 @@ function Header() {
         <input id="navbar-toggle" className="navbar-toggle" type="checkbox" />
         <label htmlFor="navbar-toggle" className="burger-container">
           <object
-            data="./public/icons/toggle.svg"
+            data="/icons/toggle.svg"
             className="icon-toggle cursor-point"
           />
         </label>
@@ -45,7 +45,7 @@ function Header() {
             {/* search */}
             <li className="nav-item">
               <object
-                data="./public/icons/search.svg"
+                data="/icons/search.svg"
                 className="nav-icon cursor-point"
                 type="image/svg+xml"
               ></object>
@@ -53,7 +53,7 @@ function Header() {
             {/* cart */}
             <li className="nav-item">
               <object
-                data="./public/icons/cart.svg"
+                data="/icons/cart.svg"
                 className="nav-icon cursor-point"
                 type="image/svg+xml"
               ></object>
@@ -61,18 +61,18 @@ function Header() {
             <li id="theme-toggle" className="nav-item">
               {/* moon */}
               <object
-                data="./public/icons/moon.svg"
+                data="/icons/moon.svg"
                 className="nav-icon cursor-point"
               ></object>
               {/* sun */}
-              {/* <object data="./public/icons/sun.svg" class="nav-icon cursor-point">
+              {/* <object data="/icons/sun.svg" class="nav-icon cursor-point">
             </object>    */}
             </li>
           </ul>
         </nav>
         {/* logo */}
         <a className="header-logo-container" href="#">
-          <img src="./public/icons/logo.svg" className="cursor-point" />
+          <img src="/icons/logo.svg" className="cursor-point" />
         </a>
       </div>
     </header>
