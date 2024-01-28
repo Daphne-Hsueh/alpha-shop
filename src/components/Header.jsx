@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/Header.module.css"
 
 function Navitem({navText}) {
@@ -42,11 +41,8 @@ function Header() {
             <Navitem navText="聯絡我們" />
           </ul>
           <ul className={`${styles.navList} ${styles.siteActionList}`}>
-            {/* search */}
             <Navlogo path="./public/icons/search.svg" />
-            {/* cart */}
             <Navlogo path="./public/icons/cart.svg" />
-            {/* theme toggle */}
             <Navlogo id="theme-toggle" path="./public/icons/moon.svg" />
             <Navlogo id="theme-toggle" path="./public/icons/sun.svg" />
           </ul>

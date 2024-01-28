@@ -1,0 +1,209 @@
+.formContainer {
+  display: flex;
+  margin-top: 64px;
+}
+
+.formContainer h3.formTitle {
+  display: flex;
+  flex: 0 0 100%;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.formBody .col {
+  justify-content: space-between;
+}
+
+.formBody .inputGroup {
+  margin-top: 24px;
+}
+
+.formBody .inputGroup .inputLabel {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--input-label);
+  margin-bottom: 8px;
+}
+
+.formBody .inputGroup .selectContainer::after {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  z-index: -2;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: var(--select-arrow) transparent transparent transparent;
+  content: "";
+}
+
+.formBody .inputGroup input,
+.formBody .inputGroup select {
+  width: 100%;
+  padding: 12px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.formBody .inputGroup input {
+  color: var(--input-text);
+}
+
+.formBody .inputGroup select {
+  color: var(--select-true);
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.formBody .inputGroup select:required:invalid {
+  color: var(--select-false);
+}
+
+.formBody .inputGroup select option {
+  color: var(--select-true);
+}
+
+.formBody .inputGroup select option[value=""][disabled] {
+  display: none;
+}
+
+.formBody .radioGroup {
+  position: relative;
+  justify-content: unset;
+  padding: 11px 20px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.formBody .radioGroup input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  align-self: center;
+  -webkit-appearance: none;
+}
+
+.formBody .radioGroup input[type=radio]::before {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: 1px solid #222222;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.formBody .radioGroup input[type=radio]:checked::before {
+  border: 6px solid #2A2A2A;
+  background-color: #FFFFFF;
+}
+
+.formBody .radioGroup .radioInfo {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.formBody .radioGroup .radioInfo .col {
+  margin-bottom: 2px;
+}
+
+.formBody .radioGroup .radioInfo .text {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.formBody .radioGroup .radioInfo .price,
+.formBody .radioGroup .radioInfo .period {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.formBody .radioGroup .radioBoxBorder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.formBody .radioGroup input[type=radio]~.radioBoxBorder {
+  border-radius: 4px;
+  border: 1px solid #F0F0F5;
+}
+
+.formBody .radioGroup input[type=radio]:checked~.radioBoxBorder {
+  border: 1px solid #2A2A2A;
+}
+
+.formBody .radioGroup #shippingStandard~.radioInfo .shippingText {
+  font-weight: normal;
+}
+
+.formBody .radioGroup #shippingDhl~.radioInfo .shippingText {
+  font-weight: 700;
+}
+
+.progressControlContainer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.buttonGroup {
+  padding-top: 24px;
+  border-top: 1px solid #E6E6EB;
+}
+
+.buttonGroup button {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  border-radius: 8px;
+  border-width: 0px;
+  padding: 0px;
+}
+
+.buttonGroup button>object {
+  width: 24px;
+  height: 24px;
+}
+
+.buttonGroup button.prev {
+  background-color: transparent;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.buttonGroup button.prev>object {
+  margin-right: 12px;
+}
+
+.buttonGroup button.next {
+  justify-content: center;
+  width: 174px;
+  font-weight: 500;
+  line-height: 17px;
+  background: var(--pink);
+  color: #FFFFFF;
+  margin-left: auto;
+}
+
+.buttonGroup button.next>object {
+  margin-left: 12px;
+}
