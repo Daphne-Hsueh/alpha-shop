@@ -1,6 +1,7 @@
 ###
-ALPHA Shop I：元件拆分
+ALPHA Shop II：元件渲染
 
+-> main goal: 使用迴圈將 Cart 裡的 Item render 出來
 
 ##
 Installation
