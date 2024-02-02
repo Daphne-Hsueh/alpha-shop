@@ -1,7 +1,7 @@
 ###
-ALPHA Shop II：元件渲染
+ALPHA Shop  III：元件實作
 
--> main goal: 使用迴圈將 Cart 裡的 Item render 出來
+-> main goal: 使用useState 控制steps 及加上cart內的動態功能
 
 ##
 Installation
