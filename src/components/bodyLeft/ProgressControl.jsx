@@ -1,9 +1,15 @@
 
-function ProgressControl() {
+
+
+function ProgressControl({next, previous}) {
+
   return (
-   <section className="progress-control-container col col-lg-6 col-sm-12">
+   <section className="progress-control-container col col-lg-6 col-sm-12" > 
+
     <section className="button-group col col-12" data-phase="address">
-      <button className="next">
+      <button className="next"
+        onClick={next}
+      >
         下一步
         <object
           data="/icons/right-arrow.svg"
@@ -11,15 +17,20 @@ function ProgressControl() {
         ></object>
       </button>
     </section>
+
     <section className="button-group col col-12" data-phase="shipping">
-      <button className="prev">
+      <button className="prev"
+        onClick={previous}
+      >
         <object
           data="/icons/left-arrow.svg"
           className="cursor-point"
         ></object>
         上一步
       </button>
-      <button className="next">
+      <button className="next"
+       onClick={next}
+      >
         下一步
         <object
           data="/icons/right-arrow.svg"
@@ -27,8 +38,11 @@ function ProgressControl() {
         ></object>
       </button>
     </section>
+
     <section className="button-group col col-12" data-phase="credit-card">
-      <button className="prev">
+      <button className="prev"
+        onClick={previous}
+      >
         <object
           data="/icons/left-arrow.svg"
           className="cursor-point"

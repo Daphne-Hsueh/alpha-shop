@@ -3,7 +3,6 @@ function StepProgress() {
   return (
   <>
     <h2 className="register-title col col-12">結帳</h2>
-    {/* register-progress */}
     <section className="progress-container col col-12">
       <span className="progress-group" data-phase="address">
         <span className="progress-icon">
@@ -31,4 +30,4 @@ function StepProgress() {
   );
 }
 
-export default StepProgress
+export default StepProgress 

@@ -1,5 +1,5 @@
 export default function CartItem({ item, quantity, onQuantityChange }) {
-  // Handler for incrementing and decrementing quantity
+
   const handleQuantityChange = (event) => {
     if (event.currentTarget.classList.contains('plus')) {
       onQuantityChange(quantity + 1);
