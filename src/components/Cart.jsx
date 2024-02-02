@@ -1,10 +1,12 @@
+import { useState } from "react"
+
 const data = [
   {
     id: '1',
     name: '貓咪罐罐',
     img: 'https://picsum.photos/300/300?text=1',
     price: 100,
-    quantity: 2,
+    quantity: 1,
   },
   {
     id: '2',
@@ -15,46 +17,66 @@ const data = [
   },
 ]
 
-function Item() {
+function ItemList({item}) {
   
-  const cartItems = data.map(item =>
+  const [quantity,setQuantity] = useState(0)
 
-    <div
-      key = {item.id}
-      className="product-container col col-12"
-      data-count={item.quantity}
-      data-price={item.price}
-    >
-      <img className="img-container" src={item.img} />
-      <div className="product-info">
-        <div className="product-name">{item.name}</div>
-        <div className="product-control-container">
-          <div className="product-control">
-            <object
-              className="product-action minus"
-              data="/icons/minus.svg"
-            />
-            <span className="product-count">{item.quantity}</span>
-            <object
-              className="product-action minus"
-              data="icons/plus.svg"
-            />
+  function handleQuantity (event) {
+    if (event.currentTarget.classList.contains('plus')) {
+      setQuantity(quantity + 1)
+
+    } else if (event.currentTarget.classList.contains('minus') && quantity > 0) {
+      setQuantity(quantity - 1)
+    }
+  }
+
+
+  
+  return (
+    <>
+      <div
+        key = {item.id}
+        className="product-container col col-12"
+        data-count={item.quantity}
+        data-price={item.price}
+      >
+        <img className="img-container" src={item.img} />
+        <div className="product-info">
+          <div className="product-name">{item.name}</div>
+          <div className="product-control-container">
+            <div className="product-control">
+              <img 
+                src="/icons/minus.svg" 
+                alt="minusIcon" 
+                className="product-action minus" 
+                onClick={handleQuantity}/>
+
+              <span className="product-count">{quantity}</span>
+              <img 
+                src="/icons/plus.svg" 
+                alt="plusIcon" 
+                className="product-action plus" 
+                onClick={handleQuantity}/>
+            </div>
           </div>
+          <div className="price">${item.price * quantity}</div>
         </div>
-        <div className="price">${item.price}</div>
       </div>
-    </div>
-    
-    )
-  return <>{cartItems}</> 
+    </>
+  )
 }
 
 function Cart() {
+
+
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
       <section className="product-list col col-12" data-total-price={0}>
-        <Item/>
+        {data.map (dataItem=> ( 
+         <ItemList key = {dataItem.id} item ={dataItem}/>
+        ))}
+       
       </section>
 
       <section className="cart-info shipping col col-12">
