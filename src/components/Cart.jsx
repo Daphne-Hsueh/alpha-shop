@@ -1,4 +1,5 @@
 import { useState } from "react"
+import CartItem from "./CartItem"
 
 const data = [
   {
@@ -17,66 +18,35 @@ const data = [
   },
 ]
 
-function ItemList({item}) {
-  
-  const [quantity,setQuantity] = useState(0)
-
-  function handleQuantity (event) {
-    if (event.currentTarget.classList.contains('plus')) {
-      setQuantity(quantity + 1)
-
-    } else if (event.currentTarget.classList.contains('minus') && quantity > 0) {
-      setQuantity(quantity - 1)
-    }
-  }
-
-
-  
-  return (
-    <>
-      <div
-        key = {item.id}
-        className="product-container col col-12"
-        data-count={item.quantity}
-        data-price={item.price}
-      >
-        <img className="img-container" src={item.img} />
-        <div className="product-info">
-          <div className="product-name">{item.name}</div>
-          <div className="product-control-container">
-            <div className="product-control">
-              <img 
-                src="/icons/minus.svg" 
-                alt="minusIcon" 
-                className="product-action minus" 
-                onClick={handleQuantity}/>
-
-              <span className="product-count">{quantity}</span>
-              <img 
-                src="/icons/plus.svg" 
-                alt="plusIcon" 
-                className="product-action plus" 
-                onClick={handleQuantity}/>
-            </div>
-          </div>
-          <div className="price">${item.price * quantity}</div>
-        </div>
-      </div>
-    </>
-  )
-}
-
 function Cart() {
+  const [quantities, setQuantities] = useState({});
 
+  const handleQuantityChange = (id, quantity) => {
+    setQuantities(prevQuantities => ({
+      ...prevQuantities,
+      [id]: quantity
+    }));
+  };
+
+  const calculateTotalPrice = () => {
+    return data.reduce((total, item) => {
+      const itemTotal = (quantities[item.id] || 0) * item.price;
+      return total + itemTotal;
+    }, 0);
+  };
 
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
-      <section className="product-list col col-12" data-total-price={0}>
-        {data.map (dataItem=> ( 
-         <ItemList key = {dataItem.id} item ={dataItem}/>
+      <section className="product-list col col-12">
+        {data.map(dataItem => (
+          <CartItem
+            key={dataItem.id}
+            item={dataItem}
+            quantity={quantities[dataItem.id] || 0}
+            onQuantityChange={(quantity) => handleQuantityChange(dataItem.id, quantity)}
+          />
         ))}
-       
       </section>
 
       <section className="cart-info shipping col col-12">
@@ -85,10 +55,10 @@ function Cart() {
       </section>
       <section className="cart-info total col col-12">
         <div className="text">小計</div>
-        <div className="price">$0</div>
+        <div className="price">${calculateTotalPrice()}</div>
       </section>
-  </section>
-  )
+    </section>
+  );
 }
 
 export default Cart
