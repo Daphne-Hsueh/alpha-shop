@@ -1,3 +1,6 @@
+
+import { createContext, useContext, useState } from 'react';
+
 export const data = [
   {
     id: '1',
@@ -15,3 +18,41 @@ export const data = [
   },
 ]
 
+
+export const CartContext = createContext();
+
+
+export const CartProvider = ({ children }) => {
+
+  const [quantities, setQuantities] = useState({});
+  const handleQuantityChange = (id, quantity) => {
+    setQuantities(prevQuantities => ({
+      ...prevQuantities,
+      [id]: quantity
+    }));
+  };
+
+  const calculateTotalPrice = (data) => {
+    return data.reduce((total, item) => {
+      const itemTotal = (quantities[item.id] || 0) * item.price;
+      return total + itemTotal;
+    }, 0);
+  };
+
+  const contextValue = {
+    quantities,
+    handleQuantityChange,
+    calculateTotalPrice
+  };
+
+  return (
+    <CartContext.Provider value={contextValue}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+
+export const useCart = () => useContext(CartContext);
+
+ 

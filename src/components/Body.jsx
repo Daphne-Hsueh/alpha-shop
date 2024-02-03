@@ -3,6 +3,7 @@ import Steps from "./bodyLeft/Steps"
 import ProgressControl from "./bodyLeft/ProgressControl"
 import Cart from "./Cart"
 import { createContext, useState } from 'react';
+import { CartProvider } from "./CartContext";
 
 export const StateContext = createContext(1)
 export const FormContext = createContext(null)
@@ -10,7 +11,7 @@ export const FormContext = createContext(null)
 function Body () {
   const [state,setState] = useState(1) 
   const [formData, setFormData] = useState()
-  
+
   return (
     <StateContext.Provider value={{state, setState}}>
       <FormContext.Provider value = {{formData,setFormData}}>
@@ -20,7 +21,9 @@ function Body () {
               <StepProgress/>
               <Steps/>
             </section>
-            <Cart/>
+            <CartProvider>
+              <Cart/> 
+            </CartProvider>
             <ProgressControl />
           </div>
         </main>
@@ -28,8 +31,6 @@ function Body () {
     </StateContext.Provider>
   )
 }
-
-
 
 
 export default Body;
