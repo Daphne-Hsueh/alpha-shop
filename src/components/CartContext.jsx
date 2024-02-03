@@ -1,6 +1,8 @@
 
 import { createContext, useContext, useState } from 'react';
 
+ export let totalprice;
+
 export const data = [
   {
     id: '1',
@@ -35,7 +37,8 @@ export const CartProvider = ({ children }) => {
   const calculateTotalPrice = (data) => {
     return data.reduce((total, item) => {
       const itemTotal = (quantities[item.id] || 0) * item.price;
-      return total + itemTotal;
+      totalprice = total + itemTotal
+      return totalprice;
     }, 0);
   };
 

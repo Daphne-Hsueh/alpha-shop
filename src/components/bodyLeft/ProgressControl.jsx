@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { StateContext , FormContext } from '../Body';
+import { totalprice } from '../CartContext';
+
 
 function ProgressControl() {
 
-  const {state} = useContext(StateContext)
-  const {setState} = useContext(StateContext)
+  const {state , setState} = useContext(StateContext)
   const {formData} = useContext(FormContext)
 
   function next() {
@@ -21,6 +22,7 @@ function ProgressControl() {
       console.log("卡號: ",formData.cardNum)
       console.log("有效期限: ",formData.date)
       console.log("CCV: ",formData.CCV)
+      console.log(`金額小計: $${totalprice}`)
       return
     }
     alert('請填寫付款資訊')

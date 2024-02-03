@@ -15,7 +15,7 @@ function Cart() {
               key={dataItem.id}
               item={dataItem}
               quantity={quantities[dataItem.id] || 0}
-              // onQuantityChange is now managed within each CartItem via context
+
             />
           ))}
         </section>

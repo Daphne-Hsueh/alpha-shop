@@ -23,8 +23,8 @@ function Body () {
             </section>
             <CartProvider>
               <Cart/> 
+              <ProgressControl />
             </CartProvider>
-            <ProgressControl />
           </div>
         </main>
       </FormContext.Provider>
