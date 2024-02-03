@@ -1,7 +1,7 @@
 ###
-ALPHA Shop  III：元件實作
+ALPHA Shop IV：表單實作
 
--> main goal: 使用useState 控制steps 及加上cart內的動態功能
+-> main goal: 使用 Context 做全站的 state 變數管理，以及 console.log 購物車總金額 (小計) 及持卡人姓名、卡號、有效期限及 CCV
 
 ##
 Installation
