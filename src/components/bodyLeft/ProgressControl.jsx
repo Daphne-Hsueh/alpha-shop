@@ -1,11 +1,34 @@
+import { useContext } from 'react';
+import { StateContext , FormContext } from '../Body';
 
+function ProgressControl() {
 
+  const {state} = useContext(StateContext)
+  const {setState} = useContext(StateContext)
+  const {formData} = useContext(FormContext)
 
-function ProgressControl({next, previous}) {
+  function next() {
+    setState(state + 1)
+  }
+
+  function previous() {
+    setState(state - 1)
+  }
+
+  function save() {
+    if (formData !== undefined && Object.keys(formData).length === 4) {
+      console.log("持卡人姓名: ",formData.name)
+      console.log("卡號: ",formData.cardNum)
+      console.log("有效期限: ",formData.date)
+      console.log("CCV: ",formData.CCV)
+      return
+    }
+    alert('請填寫付款資訊')
+  }
+
 
   return (
    <section className="progress-control-container col col-lg-6 col-sm-12" > 
-
     <section className="button-group col col-12" data-phase="address">
       <button className="next"
         onClick={next}
@@ -49,7 +72,9 @@ function ProgressControl({next, previous}) {
         ></object>
         上一步
       </button>
-      <button className="next">確認下單</button>
+      <button className="next"
+        onClick={save}
+      >確認下單</button>
     </section>
   </section>
 
